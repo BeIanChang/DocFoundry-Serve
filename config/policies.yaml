@@ -1,0 +1,30 @@
+default_mode: stage_aware
+
+baseline:
+  name: shared_balanced
+  generation:
+    temperature: 0.3
+    max_tokens: 256
+    top_p: 0.9
+
+stage_aware:
+  planning:
+    name: planning_fast
+    generation:
+      temperature: 0.1
+      max_tokens: 96
+      top_p: 0.9
+
+  synthesis:
+    name: synthesis_long_context
+    generation:
+      temperature: 0.4
+      max_tokens: 512
+      top_p: 0.95
+
+  refinement:
+    name: refinement_stable
+    generation:
+      temperature: 0.1
+      max_tokens: 256
+      top_p: 0.85

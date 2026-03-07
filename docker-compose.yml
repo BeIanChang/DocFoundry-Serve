@@ -1,0 +1,42 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    command: >
+      --model ${VLLM_MODEL:-Qwen/Qwen2.5-3B-Instruct}
+      --host 0.0.0.0
+      --port 8000
+      --max-model-len ${VLLM_MAX_MODEL_LEN:-8192}
+      --gpu-memory-utilization ${VLLM_GPU_MEMORY_UTILIZATION:-0.9}
+    environment:
+      HUGGING_FACE_HUB_TOKEN: ${HUGGING_FACE_HUB_TOKEN:-}
+    ports:
+      - "8001:8000"
+    volumes:
+      - hf-cache:/root/.cache/huggingface
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+
+  gateway:
+    build: .
+    depends_on:
+      - vllm
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+      VLLM_BASE_URL: http://vllm:8000/v1
+      VLLM_MODEL: ${VLLM_MODEL:-Qwen/Qwen2.5-3B-Instruct}
+      ROUTER_MODE: stage_aware
+      POLICY_CONFIG_PATH: /app/config/policies.yaml
+      METRICS_PATH: /app/data/metrics/gateway_metrics.jsonl
+      METRICS_FORMAT: jsonl
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  hf-cache:
