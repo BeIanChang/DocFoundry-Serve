@@ -8,12 +8,14 @@ Agentic workflows do not have uniform generation needs across steps. Planning sh
 
 ## Architecture
 
-`FastAPI Gateway -> Policy Router -> vLLM(OpenAI API) -> Metrics Sink`
+`FastAPI Gateway -> Auth -> Admission Control -> Policy Router -> vLLM(OpenAI API) -> Batched Metrics Sink`
 
 - `POST /generate` accepts `stage`, `prompt`, and optional `metadata`.
+- JWT auth is compatible with DocFoundry tokens (`HS256`, `sub/email/name`, Bearer header).
+- Admission control enforces in-flight limits, queue caps, queue timeout, and stage-aware load shedding.
 - Policy router selects config by stage (`planning`, `synthesis`, `refinement`) or baseline mode.
-- vLLM client streams responses when possible to capture TTFT.
-- Per-request metrics are appended to JSONL or CSV.
+- vLLM client streams responses when possible to capture TTFT, with typed errors and retry budget.
+- Per-request metrics are batched and flushed to JSONL or CSV asynchronously.
 
 Core modules:
 
@@ -48,6 +50,16 @@ Example response fields:
 - `metrics.output_tokens`
 - `metrics.policy_used`
 
+Headers:
+
+- `Authorization: Bearer <jwt>` (required when `AUTH_REQUIRED=true`)
+- `X-Router-Mode: baseline|stage_aware` (optional override)
+
+Operational endpoints:
+
+- `GET /health`: liveness
+- `GET /ready`: readiness (checks vLLM and model availability + admission snapshot)
+
 ## Stage Policies
 
 Defined in `config/policies.yaml`:
@@ -74,6 +86,13 @@ Set env vars as needed:
 - `VLLM_MODEL`
 - `ROUTER_MODE` (`baseline` or `stage_aware`)
 - `METRICS_PATH` and `METRICS_FORMAT` (`jsonl` or `csv`)
+- `AUTH_REQUIRED` (`true`/`false`, default `false`)
+- `JWT_SECRET` and `JWT_ALGORITHM` (DocFoundry-compatible defaults)
+- `MAX_IN_FLIGHT`, `MAX_QUEUE`, `QUEUE_WAIT_TIMEOUT_SECONDS`
+- `STAGE_QUEUE_LIMITS` (example: `planning:200,synthesis:120,refinement:120`)
+- `STAGE_IN_FLIGHT_LIMITS` (example: `planning:48,synthesis:24,refinement:24`)
+- `VLLM_MAX_RETRIES`, `VLLM_RETRY_BACKOFF_MS`
+- `METRICS_BATCH_SIZE`, `METRICS_FLUSH_INTERVAL_SECONDS`
 
 ### 2) Docker Compose run (gateway + vLLM)
 
@@ -92,6 +111,12 @@ Run mixed workload in both modes:
 
 ```bash
 python scripts/benchmark_mixed.py --config config/benchmark.yaml --modes baseline stage_aware --output-dir data/benchmarks
+```
+
+If auth is enabled on gateway:
+
+```bash
+python scripts/benchmark_mixed.py --auth-token "$DOCFOUNDRY_SERVE_TOKEN"
 ```
 
 This writes:

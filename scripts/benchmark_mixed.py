@@ -4,11 +4,12 @@ import argparse
 import asyncio
 from datetime import datetime, timezone
 import json
+import os
 from pathlib import Path
 import random
 import statistics
 import time
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
 import httpx
 import yaml
@@ -55,6 +56,7 @@ async def run_mode(
     concurrency: int,
     timeout_seconds: float,
     seed: int,
+    auth_token: str | None,
 ) -> List[Dict[str, Any]]:
     sem = asyncio.Semaphore(max(1, concurrency))
     rng = random.Random(seed)
@@ -77,6 +79,8 @@ async def run_mode(
                     },
                 }
                 headers = {"X-Router-Mode": mode}
+                if auth_token:
+                    headers["Authorization"] = f"Bearer {auth_token}"
                 started = time.perf_counter()
                 record: Dict[str, Any] = {
                     "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -157,6 +161,7 @@ async def main_async(args: argparse.Namespace) -> None:
     prompt_files = cfg.get("prompt_files") or {}
 
     prompts = load_prompts(prompt_files, root)
+    auth_token = args.auth_token or os.environ.get("DOCFOUNDRY_SERVE_TOKEN")
     output_dir = Path(args.output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -172,6 +177,7 @@ async def main_async(args: argparse.Namespace) -> None:
             concurrency=concurrency,
             timeout_seconds=timeout_seconds,
             seed=mode_seed,
+            auth_token=auth_token,
         )
         out_path = output_dir / f"results_{mode}.jsonl"
         write_jsonl(out_path, rows)
@@ -191,6 +197,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--output-dir", default="data/benchmarks", help="Directory for benchmark JSONL files")
     parser.add_argument("--seed", type=int, default=42, help="Random seed")
+    parser.add_argument("--auth-token", default=None, help="Bearer token for authenticated gateway")
     return parser.parse_args()
 
 

@@ -33,6 +33,18 @@ services:
       POLICY_CONFIG_PATH: /app/config/policies.yaml
       METRICS_PATH: /app/data/metrics/gateway_metrics.jsonl
       METRICS_FORMAT: jsonl
+      METRICS_BATCH_SIZE: 50
+      METRICS_FLUSH_INTERVAL_SECONDS: 1.0
+      AUTH_REQUIRED: ${AUTH_REQUIRED:-false}
+      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-me}
+      JWT_ALGORITHM: HS256
+      MAX_IN_FLIGHT: 64
+      MAX_QUEUE: 512
+      QUEUE_WAIT_TIMEOUT_SECONDS: 2.0
+      STAGE_QUEUE_LIMITS: planning:200,synthesis:120,refinement:120
+      STAGE_IN_FLIGHT_LIMITS: planning:48,synthesis:24,refinement:24
+      VLLM_MAX_RETRIES: 2
+      VLLM_RETRY_BACKOFF_MS: 250
     ports:
       - "8000:8000"
     volumes:
