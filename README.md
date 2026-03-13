@@ -2,6 +2,37 @@
 
 Stage-aware inference serving layer for agentic document reasoning.
 
+## Project Goal
+
+Provide a reproducible serving and benchmarking layer for agentic reasoning stages so we can compare:
+
+- `baseline`: single shared generation config for all requests
+- `stage_aware`: stage-specific policies for `planning`, `synthesis`, and `refinement`
+
+The service is designed to sit in front of vLLM and remain compatible with DocFoundry authentication semantics.
+
+## Current Progress
+
+Serving and routing:
+
+- `POST /generate` is implemented with stage-aware policy routing and baseline override.
+- Policy config is externalized in YAML (`config/policies.yaml`).
+- `X-Router-Mode` supports per-request mode switching for A/B benchmark runs.
+
+Reliability and production controls:
+
+- DocFoundry-compatible JWT decode path is integrated (`HS256`, `sub/email/name`, Bearer token).
+- Readiness endpoint (`GET /ready`) checks upstream vLLM and model availability.
+- Typed upstream error handling is implemented with retry budget and backoff.
+- Admission control is in place (max in-flight, queue cap, queue wait timeout, stage-aware shedding).
+- Metrics writing is asynchronous and batched to reduce per-request file I/O contention.
+
+Benchmarking and analysis:
+
+- Mixed-workload benchmark script is implemented for baseline vs stage-aware runs.
+- Result analyzer reports avg latency, p95 latency, tokens/sec, and per-stage breakdown.
+- CI is enabled for compile checks and tests on push/PR.
+
 ## Motivation
 
 Agentic workflows do not have uniform generation needs across steps. Planning should be fast and concise, synthesis needs larger output windows, and refinement should be stable and deterministic. `DocFoundry-Serve` provides a policy-aware gateway in front of vLLM so each stage gets a tuned generation profile while preserving benchmark reproducibility.
@@ -105,6 +136,39 @@ Endpoints:
 - Gateway: `http://localhost:8000`
 - vLLM OpenAI endpoint: `http://localhost:8001/v1`
 
+## Remote Server Benchmark Runbook
+
+1. Provision server with GPU drivers/CUDA and Docker runtime.
+2. Set required environment variables:
+   - `VLLM_MODEL`
+   - `JWT_SECRET` (must match DocFoundry if auth is enabled)
+   - `AUTH_REQUIRED` (`false` for isolated benchmark, `true` for integrated test)
+3. Launch services:
+
+```bash
+docker compose up --build
+```
+
+4. Wait for readiness:
+
+```bash
+curl http://<server-host>:8000/ready
+```
+
+5. Run benchmark modes:
+
+```bash
+python scripts/benchmark_mixed.py --config config/benchmark.yaml --modes baseline stage_aware --output-dir data/benchmarks
+```
+
+6. Analyze outputs:
+
+```bash
+python scripts/analyze_results.py --baseline data/benchmarks/results_baseline.jsonl --stage-aware data/benchmarks/results_stage_aware.jsonl --output data/benchmarks/analysis_summary.csv
+```
+
+7. Compare per-stage improvements and verify no SLO regression in tail latency.
+
 ## Benchmark Reproducibility
 
 Run mixed workload in both modes:
@@ -153,3 +217,10 @@ Typical behavior when policies are well-tuned:
 - `refinement` shows lower variance from lower temperature settings
 
 Results depend on model, GPU, prompt mix, and system load, so compare runs with fixed seed and identical hardware.
+
+## Next Steps
+
+- Add Prometheus + OpenTelemetry instrumentation for production observability.
+- Add dynamic policy adaptation under load/SLO pressure.
+- Add optional Redis-backed async queue + worker pool path for burst smoothing.
+- Add policy canary/A-B controls for controlled rollout experiments.
