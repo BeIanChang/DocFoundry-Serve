@@ -1,0 +1,55 @@
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+Unused vacation days do not automatically carry over into the next calendar year, and employees are expected to use them by December 31 [S1]. Limited carryover may be approved through the normal process, including written manager approval for up to 5 unused days submitted before year end [S2]. The FAQ repeats the same default rule and notes that carryover is not automatic [S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+A manager can approve up to 5 unused PTO days for carryover without HR if the request is submitted before year end [S1][S2]. The same 5-day threshold appears in the FAQ, which reinforces that this manager-only path applies before the deadline [S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+HR approval is required whenever the carryover request exceeds 5 days [S1][S2]. Those larger requests are meant for documented business continuity or similar exceptional situations, not ordinary scheduling delays [S1][S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+Requests submitted after December 31 are generally denied by default [S1][S2]. HR may still review a late request if the delay was tied to a documented emergency, a system outage, or a company-directed restriction that prevented timely submission [S3][S4].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+An approved PTO carryover exception should record the reason for the exception, the affected dates, the approving manager, and HR acknowledgment when applicable [S1]. Supporting notes should also capture the number of approved days, an operational justification, and any business impact or leadership direction for HR-reviewed cases [S2][S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+If 7 days need to be carried over because of a launch blackout period, manager approval alone is not enough [S1][S2]. Because the request exceeds 5 days, it must go through both manager approval and HR approval, and the workflow routes it to HR after the manager step [S2][S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+Approved carryover normally must be used by March 31 of the following year [S1][S2]. The FAQ describes March 31 as the usual deadline, while the handbook allows a different date only if HR grants it in writing [S1][S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The default PTO rule is that unused vacation does not automatically carry over, and employees are expected to use it by December 31 [S1]. Up to 5 days may be carried with written manager approval before year end, while requests above 5 days require HR approval and an exceptional business reason [S2][S3]. Late requests are usually denied, although HR may review them for documented emergencies, outages, or company-directed restrictions [S4][S5].

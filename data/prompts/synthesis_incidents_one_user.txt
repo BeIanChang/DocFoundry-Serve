@@ -1,0 +1,88 @@
+Question: What caused the April API latency incident and what was the first mitigation step?
+
+Sources:
+[D1] Incident Postmortem - API Latency Spike
+[S1] The primary cause was connection pool exhaustion on the metadata database after a deployment changed retry behavior in the billing worker.
+[S2] The on-call engineer rolled back the worker deployment at 09:46 UTC.
+[D2] Deployment Notes - April 17
+[S3] The billing worker deployment at 08:58 UTC introduced a new retry policy for failed write operations.
+
+Context:
+[S1] The primary cause was connection pool exhaustion on the metadata database after a deployment changed retry behavior in the billing worker.
+
+[S2] The on-call engineer rolled back the worker deployment at 09:46 UTC.
+
+[S3] The billing worker deployment at 08:58 UTC introduced a new retry policy for failed write operations.
+---
+Question: When should the database owner be escalated during an API latency event?
+
+Sources:
+[D1] On-Call Runbook
+[S1] Escalate to the database owner if connection pressure continues for more than 15 minutes after rollback.
+[S2] Database connection pool exhaustion should be confirmed through connection metrics, worker concurrency counts, and error logs showing timeout or pool-acquire failures.
+
+Context:
+[S1] Escalate to the database owner if connection pressure continues for more than 15 minutes after rollback.
+
+[S2] Database connection pool exhaustion should be confirmed through connection metrics, worker concurrency counts, and error logs showing timeout or pool-acquire failures.
+---
+Question: What latency threshold turns this into an incident, and what checks should happen first?
+
+Sources:
+[D1] On-Call Runbook
+[S1] When p95 latency exceeds 2 seconds for more than 10 minutes, the on-call engineer should first check database saturation, recent deploys, and queue backlog.
+[D2] Known Issues
+[S2] For this service, p95 latency above 2 seconds for sustained write traffic is treated as an operational incident requiring investigation.
+
+Context:
+[S1] When p95 latency exceeds 2 seconds for more than 10 minutes, the on-call engineer should first check database saturation, recent deploys, and queue backlog.
+
+[S2] For this service, p95 latency above 2 seconds for sustained write traffic is treated as an operational incident requiring investigation.
+---
+Question: Summarize the retry-related issue behind the billing worker incident.
+
+Sources:
+[D1] Deployment Notes - April 17
+[S1] The retry change increased the per-job retry cap from 2 attempts to 6 attempts and reduced the wait time between retries.
+[D2] Known Issues
+[S2] Aggressive retries can amplify pool contention and create elevated write latency even when database CPU remains under control.
+[D3] Incident Postmortem - API Latency Spike
+[S3] The new worker logic retried failed writes too aggressively and increased concurrent DB usage.
+
+Context:
+[S1] The retry change increased the per-job retry cap from 2 attempts to 6 attempts and reduced the wait time between retries.
+
+[S2] Aggressive retries can amplify pool contention and create elevated write latency even when database CPU remains under control.
+
+[S3] The new worker logic retried failed writes too aggressively and increased concurrent DB usage.
+---
+Question: How long did the incident last and when did rollback happen?
+
+Sources:
+[D1] Incident Postmortem - API Latency Spike
+[S1] The customer API experienced elevated p95 latency from 09:12 to 10:03 UTC.
+[S2] The on-call engineer rolled back the worker deployment at 09:46 UTC.
+[D2] Deployment Notes - April 17
+[S3] Rollback completed at 09:46 UTC after incident review by the on-call engineer.
+
+Context:
+[S1] The customer API experienced elevated p95 latency from 09:12 to 10:03 UTC.
+
+[S2] The on-call engineer rolled back the worker deployment at 09:46 UTC.
+
+[S3] Rollback completed at 09:46 UTC after incident review by the on-call engineer.
+---
+Question: Which endpoints were most affected and what was the measured impact?
+
+Sources:
+[D1] Incident Postmortem - API Latency Spike
+[S1] The issue primarily affected write-heavy endpoints in the billing and order-update paths.
+[S2] Approximately 18 percent of write requests exceeded the 2-second internal SLO during the event window.
+[S3] Read-only traffic was degraded but remained partially available.
+
+Context:
+[S1] The issue primarily affected write-heavy endpoints in the billing and order-update paths.
+
+[S2] Approximately 18 percent of write requests exceeded the 2-second internal SLO during the event window.
+
+[S3] Read-only traffic was degraded but remained partially available.

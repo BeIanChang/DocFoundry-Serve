@@ -1,0 +1,83 @@
+Question: How long is the contract term and when would it renew if nobody gives notice?
+
+Sources:
+[D1] Master Services Agreement
+[S1] The initial term of the agreement is 12 months from the effective date and renews automatically for successive 12-month periods unless either party gives at least 30 days' written notice before the renewal date.
+[D2] Order Form
+[S2] The subscription term begins on July 1, 2025 and ends on June 30, 2026.
+
+Context:
+[S1] The initial term of the agreement is 12 months from the effective date and renews automatically for successive 12-month periods unless either party gives at least 30 days' written notice before the renewal date.
+
+[S2] The subscription term begins on July 1, 2025 and ends on June 30, 2026.
+---
+Question: What are the payment terms and late-fee rule?
+
+Sources:
+[D1] Master Services Agreement
+[S1] Invoices are due net 30 from the invoice date.
+[S2] Late payments may incur interest at 1 percent per month or the maximum amount permitted by law, whichever is lower.
+[D2] Vendor FAQ
+[S3] Standard payment terms are net 30.
+
+Context:
+[S1] Invoices are due net 30 from the invoice date.
+
+[S2] Late payments may incur interest at 1 percent per month or the maximum amount permitted by law, whichever is lower.
+
+[S3] Standard payment terms are net 30.
+---
+Question: How fast does the vendor need to notify us after a confirmed security incident?
+
+Sources:
+[D1] Security Addendum
+[S1] Vendor will notify customer of a confirmed security incident involving customer data without undue delay and no later than 72 hours after confirmation.
+[D2] Vendor FAQ
+[S2] The standard notification target is within 72 hours of confirming a security incident.
+
+Context:
+[S1] Vendor will notify customer of a confirmed security incident involving customer data without undue delay and no later than 72 hours after confirmation.
+
+[S2] The standard notification target is within 72 hours of confirming a security incident.
+---
+Question: Which document controls if the security timeline conflicts with the MSA?
+
+Sources:
+[D1] Security Addendum
+[S1] Security obligations in this addendum control over conflicting general language in the master agreement.
+[D2] Order Form
+[S2] The order form incorporates the Master Services Agreement and Security Addendum by reference.
+
+Context:
+[S1] Security obligations in this addendum control over conflicting general language in the master agreement.
+
+[S2] The order form incorporates the Master Services Agreement and Security Addendum by reference.
+---
+Question: Summarize the term, payment, and security notification obligations.
+
+Sources:
+[D1] Master Services Agreement
+[S1] The initial term is 12 months and renews automatically unless either party gives 30 days' written notice before renewal.
+[S2] Invoices are due net 30 from the invoice date.
+[D2] Security Addendum
+[S3] Vendor must notify customer of a confirmed security incident without undue delay and no later than 72 hours after confirmation.
+[D3] Order Form
+[S4] The subscription term begins on July 1, 2025 and ends on June 30, 2026.
+
+Context:
+[S1] The initial term is 12 months and renews automatically unless either party gives 30 days' written notice before renewal.
+
+[S2] Invoices are due net 30 from the invoice date.
+
+[S3] Vendor must notify customer of a confirmed security incident without undue delay and no later than 72 hours after confirmation.
+
+[S4] The subscription term begins on July 1, 2025 and ends on June 30, 2026.
+---
+Question: What dates define the current subscription term on the order form?
+
+Sources:
+[D1] Order Form
+[S1] The subscription term begins on July 1, 2025 and ends on June 30, 2026.
+
+Context:
+[S1] The subscription term begins on July 1, 2025 and ends on June 30, 2026.

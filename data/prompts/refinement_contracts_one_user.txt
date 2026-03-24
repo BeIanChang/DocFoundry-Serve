@@ -1,0 +1,41 @@
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The contract term is 12 months [S1]. For the current order, that term runs from July 1, 2025 through June 30, 2026 [S2], and it renews automatically for another 12-month period unless either party gives at least 30 days' written notice before renewal [S1].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+Invoices are due net 30 from the invoice date [S1][S3]. If payment is late, interest may apply at 1 percent per month or the maximum permitted by law, whichever is lower [S2].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The vendor must notify the customer of a confirmed security incident without undue delay and no later than 72 hours after confirmation [S1]. The FAQ repeats the same 72-hour target [S2].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+If the security timeline in the addendum conflicts with general language in the MSA, the Security Addendum controls [S1]. The order form incorporates both the MSA and the addendum by reference [S2].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The agreement uses a 12-month term with automatic renewal unless either party gives 30 days' written notice before renewal [S1]. Payment terms are net 30 [S2], and confirmed security incidents must be reported without undue delay and no later than 72 hours after confirmation [S3]. The current order form runs from July 1, 2025 to June 30, 2026 [S4].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The current subscription term on the order form begins on July 1, 2025 and ends on June 30, 2026 [S1].

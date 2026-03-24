@@ -1,0 +1,19 @@
+gateway_url: http://127.0.0.1:8000/generate
+total_requests: 36
+concurrency: 4
+timeout_seconds: 90
+
+stage_distribution:
+  planning: 0.34
+  synthesis: 0.38
+  refinement: 0.28
+
+prompt_files:
+  planning: data/prompts/planning_incidents_one_user.txt
+  synthesis: data/prompts/synthesis_incidents_one_user.txt
+  refinement: data/prompts/refinement_incidents_one_user.txt
+
+metadata_base:
+  benchmark_name: incidents_one_user
+  client: benchmark_mixed.py
+  topic: incidents

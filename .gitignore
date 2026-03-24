@@ -9,5 +9,9 @@ data/metrics/*.jsonl
 data/metrics/*.csv
 data/benchmarks/*.jsonl
 data/benchmarks/*.csv
+data/benchmarks-short/
+data/benchmarks-synthetic-quick/
+data/generated/
 
 .DS_Store
+*.log

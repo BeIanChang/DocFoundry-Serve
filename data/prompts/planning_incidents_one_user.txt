@@ -1,0 +1,29 @@
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"What caused the April API latency incident and what was the first mitigation step?","scope":{"project_id":"proj_ops_demo","project_ids":["proj_ops_demo"],"folder_id":null,"kb_id":"kb_incidents","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_postmortem_april","title":"Incident Postmortem - API Latency Spike"},{"document_id":"doc_runbook","title":"On-Call Runbook"},{"document_id":"doc_deploy_notes","title":"Deployment Notes - April 17"},{"document_id":"doc_known_issues","title":"Known Issues"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"When should the database owner be escalated during an API latency event?","scope":{"project_id":"proj_ops_demo","project_ids":["proj_ops_demo"],"folder_id":null,"kb_id":"kb_incidents","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_postmortem_april","title":"Incident Postmortem - API Latency Spike"},{"document_id":"doc_runbook","title":"On-Call Runbook"},{"document_id":"doc_deploy_notes","title":"Deployment Notes - April 17"},{"document_id":"doc_known_issues","title":"Known Issues"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"What latency threshold turns this into an incident, and what checks should happen first?","scope":{"project_id":"proj_ops_demo","project_ids":["proj_ops_demo"],"folder_id":null,"kb_id":"kb_incidents","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_postmortem_april","title":"Incident Postmortem - API Latency Spike"},{"document_id":"doc_runbook","title":"On-Call Runbook"},{"document_id":"doc_deploy_notes","title":"Deployment Notes - April 17"},{"document_id":"doc_known_issues","title":"Known Issues"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"Summarize the retry-related issue behind the billing worker incident.","scope":{"project_id":"proj_ops_demo","project_ids":["proj_ops_demo"],"folder_id":null,"kb_id":"kb_incidents","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_postmortem_april","title":"Incident Postmortem - API Latency Spike"},{"document_id":"doc_runbook","title":"On-Call Runbook"},{"document_id":"doc_deploy_notes","title":"Deployment Notes - April 17"},{"document_id":"doc_known_issues","title":"Known Issues"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"How long did the incident last and when did rollback happen?","scope":{"project_id":"proj_ops_demo","project_ids":["proj_ops_demo"],"folder_id":null,"kb_id":"kb_incidents","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_postmortem_april","title":"Incident Postmortem - API Latency Spike"},{"document_id":"doc_runbook","title":"On-Call Runbook"},{"document_id":"doc_deploy_notes","title":"Deployment Notes - April 17"},{"document_id":"doc_known_issues","title":"Known Issues"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"Which endpoints were most affected and what was the measured impact?","scope":{"project_id":"proj_ops_demo","project_ids":["proj_ops_demo"],"folder_id":null,"kb_id":"kb_incidents","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_postmortem_april","title":"Incident Postmortem - API Latency Spike"},{"document_id":"doc_runbook","title":"On-Call Runbook"},{"document_id":"doc_deploy_notes","title":"Deployment Notes - April 17"},{"document_id":"doc_known_issues","title":"Known Issues"}]}]}

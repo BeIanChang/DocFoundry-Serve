@@ -1,0 +1,47 @@
+phases:
+  - name: serve_only_smoke
+    description: Benchmark DocFoundry-Serve only with synthetic prompt packs.
+    tenant_count: 3
+    docs_per_tenant: 4
+    concurrency_levels: [4, 8]
+    total_requests: 60
+    modes: [baseline, stage_aware]
+
+  - name: end_to_end_small
+    description: Ingest generated tenant corpora into DocFoundry and run scoped agent queries.
+    tenant_count: 9
+    docs_per_tenant: 4
+    concurrency_levels: [4, 8, 16]
+    total_queries: 180
+    loop_engines: [classic]
+
+  - name: end_to_end_medium
+    description: Increase tenant count and concurrency to surface retrieval and routing bottlenecks.
+    tenant_count: 18
+    docs_per_tenant: 4
+    concurrency_levels: [8, 16, 32]
+    total_queries: 360
+    loop_engines: [classic, langgraph]
+
+metrics:
+  latency:
+    - avg_ms
+    - p50_ms
+    - p95_ms
+    - p99_ms
+  throughput:
+    - requests_per_sec
+    - tokens_per_sec
+  correctness:
+    - citation_presence_rate
+    - wrong_tenant_leakage_rate
+    - error_rate
+  resources:
+    - gpu_utilization
+    - gpu_memory_mb
+    - cpu_percent
+
+topics:
+  - hr_pto_one_user
+  - incidents_one_user
+  - contracts_one_user

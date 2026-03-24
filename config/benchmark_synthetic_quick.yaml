@@ -1,0 +1,18 @@
+gateway_url: http://127.0.0.1:8000/generate
+total_requests: 36
+concurrency: 4
+timeout_seconds: 90
+
+stage_distribution:
+  planning: 0.4
+  synthesis: 0.35
+  refinement: 0.25
+
+prompt_files:
+  planning: data/prompts/planning_synthetic_set.txt
+  synthesis: data/prompts/synthesis_synthetic_set.txt
+  refinement: data/prompts/refinement_synthetic_set.txt
+
+metadata_base:
+  benchmark_name: synthetic_quick_set
+  client: benchmark_mixed.py

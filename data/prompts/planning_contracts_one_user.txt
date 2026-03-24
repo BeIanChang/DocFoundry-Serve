@@ -1,0 +1,29 @@
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"How long is the contract term and when would it renew if nobody gives notice?","scope":{"project_id":"proj_legal_demo","project_ids":["proj_legal_demo"],"folder_id":null,"kb_id":"kb_vendor_contracts","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_msa","title":"Master Services Agreement"},{"document_id":"doc_security_addendum","title":"Security Addendum"},{"document_id":"doc_order_form","title":"Order Form"},{"document_id":"doc_vendor_faq","title":"Vendor FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"What are the payment terms and late-fee rule?","scope":{"project_id":"proj_legal_demo","project_ids":["proj_legal_demo"],"folder_id":null,"kb_id":"kb_vendor_contracts","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_msa","title":"Master Services Agreement"},{"document_id":"doc_security_addendum","title":"Security Addendum"},{"document_id":"doc_order_form","title":"Order Form"},{"document_id":"doc_vendor_faq","title":"Vendor FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"How fast does the vendor need to notify us after a confirmed security incident?","scope":{"project_id":"proj_legal_demo","project_ids":["proj_legal_demo"],"folder_id":null,"kb_id":"kb_vendor_contracts","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_msa","title":"Master Services Agreement"},{"document_id":"doc_security_addendum","title":"Security Addendum"},{"document_id":"doc_order_form","title":"Order Form"},{"document_id":"doc_vendor_faq","title":"Vendor FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"Which document controls if the security timeline conflicts with the MSA?","scope":{"project_id":"proj_legal_demo","project_ids":["proj_legal_demo"],"folder_id":null,"kb_id":"kb_vendor_contracts","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_msa","title":"Master Services Agreement"},{"document_id":"doc_security_addendum","title":"Security Addendum"},{"document_id":"doc_order_form","title":"Order Form"},{"document_id":"doc_vendor_faq","title":"Vendor FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"Summarize the term, payment, and security notification obligations.","scope":{"project_id":"proj_legal_demo","project_ids":["proj_legal_demo"],"folder_id":null,"kb_id":"kb_vendor_contracts","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_msa","title":"Master Services Agreement"},{"document_id":"doc_security_addendum","title":"Security Addendum"},{"document_id":"doc_order_form","title":"Order Form"},{"document_id":"doc_vendor_faq","title":"Vendor FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+{"user_message":"What dates define the current subscription term on the order form?","scope":{"project_id":"proj_legal_demo","project_ids":["proj_legal_demo"],"folder_id":null,"kb_id":"kb_vendor_contracts","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_msa","title":"Master Services Agreement"},{"document_id":"doc_security_addendum","title":"Security Addendum"},{"document_id":"doc_order_form","title":"Order Form"},{"document_id":"doc_vendor_faq","title":"Vendor FAQ"}]}]}

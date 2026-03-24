@@ -1,0 +1,143 @@
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"Can unused vacation days carry over into the next calendar year?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"How many unused PTO days can a manager approve for carryover without HR?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"When is HR approval required for PTO carryover?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"What happens if someone submits a carryover request after December 31?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"What documentation has to be included in an approved PTO carryover exception?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"If 7 days need to be carried over because of a launch blackout period, who has to approve it?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"By when must approved carryover usually be used in the following year?","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}
+---
+You are an agent planner. Decide the NEXT action only.
+Return ONLY valid JSON with keys: action, args, rationale.
+Allowed actions: ["answer_with_context", "final", "get_document_profile", "grep_search", "keyword_search", "list_documents", "route_documents", "vector_search", "web_search"]
+Rules:
+- Keep rationale short (<= 1 sentence).
+- Output must be JSON only. No markdown.
+- If scope.document_id is set, do NOT route other documents.
+- Avoid repeating the same action more than once in a run.
+- If a list_documents/get_document_profile observation includes context_ready=true, you already have document summaries; proceed to answer_with_context or vector_search.
+- If the user asks to list/show documents, choose list_documents.
+- If you need evidence from docs, choose route_documents (optional) then vector_search then answer_with_context.
+- Do NOT ask the user clarifying questions; make best-effort assumptions and proceed.
+- If info is missing/ambiguous, prefer vector_search and then produce a final answer that states assumptions/uncertainty.
+- Prefer keyword_search for exact terms (IDs, numbers, quoted phrases); vector_search for semantic queries.
+- Prefer grep_search for regex/pattern matching or exact multi-line snippets.
+- Use web_search for general internet queries not likely contained in the KB.
+{"user_message":"Summarize the PTO carryover rule, late-request handling, and exception path in one answer.","scope":{"project_id":"proj_hr_demo","project_ids":["proj_hr_demo"],"folder_id":null,"kb_id":"kb_employee_handbook","document_id":null},"top_k":5,"max_doc_picks":5,"observations":[{"tool":"list_documents","context_ready":true,"documents":[{"document_id":"doc_handbook_2025","title":"Employee Handbook 2025"},{"document_id":"doc_hr_exceptions","title":"HR Policy Exceptions Memo"},{"document_id":"doc_manager_workflow","title":"Manager Approval Workflow"},{"document_id":"doc_benefits_faq","title":"Benefits FAQ"}]}]}

@@ -1,0 +1,25 @@
+You are refining a draft answer for stable executive-facing formatting.
+Preserve facts, shorten repetition, and return 4-6 crisp bullets.
+Do not introduce new claims.
+---
+You are refining a technical answer for handoff to an engineer.
+Keep the content precise, trim hedging, and preserve all cited evidence.
+Return bullet points.
+---
+You are refining a compliance response for consistent wording.
+Keep it conservative, remove speculation, and preserve any uncertainty notes.
+---
+You are refining a support answer for customer readability.
+Simplify wording, keep the action steps ordered, and avoid adding new troubleshooting.
+---
+You are refining a policy answer for HR readability.
+Use neutral language, preserve exceptions, and keep the format consistent.
+---
+You are refining a business summary for leadership review.
+Condense to the essential points, keep one risk callout, and maintain stable formatting.
+---
+You are refining a contract summary.
+Preserve obligations and risks, reduce verbosity, and keep a consistent bullet structure.
+---
+You are refining a research summary for a final response.
+Preserve evidence-backed claims, remove redundancy, and keep the result deterministic.

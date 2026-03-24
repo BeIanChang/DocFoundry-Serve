@@ -1,0 +1,41 @@
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The April API latency incident was caused by metadata database connection pool exhaustion after a deployment changed retry behavior in the billing worker [S1][S3]. The first mitigation step was to roll back the worker deployment at 09:46 UTC [S2].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The database owner should be escalated if connection pressure continues for more than 15 minutes after rollback [S1]. Before that, the team should confirm pool exhaustion through connection metrics, worker concurrency counts, and timeout or pool-acquire errors [S2].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+This becomes an incident when p95 latency exceeds 2 seconds for more than 10 minutes [S1]. The first checks should cover database saturation, recent deploys, and queue backlog [S1], and the known-issues doc reinforces that sustained p95 above 2 seconds on write traffic is an operational incident [S2].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The billing worker incident was driven by a retry policy change that raised the retry cap from 2 attempts to 6 and shortened retry waits [S1]. That aggressive retry behavior amplified pool contention and increased concurrent DB usage, which raised write latency [S2][S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The incident ran from 09:12 to 10:03 UTC [S1]. Rollback happened at 09:46 UTC, as both the postmortem and deployment notes state [S2][S3].
+---
+You are refining a draft answer for stability and formatting.
+Preserve all factual claims and inline citations.
+Return 3-4 concise bullets and do not introduce new claims.
+
+Draft:
+The most affected endpoints were write-heavy billing and order-update paths [S1]. About 18 percent of write requests exceeded the 2-second internal SLO during the event window [S2], while read-only traffic degraded but remained partially available [S3].

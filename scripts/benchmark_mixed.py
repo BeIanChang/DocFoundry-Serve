@@ -25,14 +25,26 @@ def load_yaml(path: Path) -> Dict[str, Any]:
     return data
 
 
-def load_prompts(prompt_files: Dict[str, str], root: Path) -> Dict[str, str]:
-    prompts: Dict[str, str] = {}
+def _split_prompt_sections(raw: str) -> List[str]:
+    chunks = [part.strip() for part in raw.split("\n---\n")]
+    prompts = [chunk for chunk in chunks if chunk]
+    return prompts or [raw.strip()]
+
+
+def load_prompts(prompt_files: Dict[str, Any], root: Path) -> Dict[str, List[str]]:
+    prompts: Dict[str, List[str]] = {}
     for stage in STAGES:
         rel = prompt_files.get(stage)
         if not rel:
             raise ValueError(f"missing prompt file for stage: {stage}")
-        p = (root / rel).resolve()
-        prompts[stage] = p.read_text(encoding="utf-8").strip()
+        rel_paths = rel if isinstance(rel, list) else [rel]
+        stage_prompts: List[str] = []
+        for rel_path in rel_paths:
+            p = (root / str(rel_path)).resolve()
+            stage_prompts.extend(_split_prompt_sections(p.read_text(encoding="utf-8").strip()))
+        prompts[stage] = [prompt for prompt in stage_prompts if prompt]
+        if not prompts[stage]:
+            raise ValueError(f"no prompts loaded for stage: {stage}")
     return prompts
 
 
@@ -49,7 +61,7 @@ async def run_mode(
     *,
     mode: str,
     url: str,
-    prompts: Dict[str, str],
+    prompts: Dict[str, List[str]],
     distribution: Dict[str, float],
     metadata_base: Dict[str, Any],
     total_requests: int,
@@ -68,7 +80,9 @@ async def run_mode(
         async def worker(request_index: int) -> None:
             async with sem:
                 stage = choose_stage(rng, distribution)
-                prompt = prompts[stage]
+                stage_prompts = prompts[stage]
+                prompt_index = rng.randrange(len(stage_prompts))
+                prompt = stage_prompts[prompt_index]
                 payload = {
                     "stage": stage,
                     "prompt": prompt,
@@ -76,6 +90,7 @@ async def run_mode(
                         **metadata_base,
                         "request_index": request_index,
                         "benchmark_mode": mode,
+                        "prompt_index": prompt_index,
                     },
                 }
                 headers = {"X-Router-Mode": mode}
@@ -87,6 +102,7 @@ async def run_mode(
                     "mode": mode,
                     "request_index": request_index,
                     "stage": stage,
+                    "prompt_index": prompt_index,
                     "ok": False,
                     "status_code": None,
                     "error": None,

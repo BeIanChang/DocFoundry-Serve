@@ -1,0 +1,30 @@
+You are synthesizing evidence from several internal policy documents.
+Produce sections for answer, supporting evidence, and open uncertainties.
+Use placeholder citations like [D1] and [D2].
+---
+You are synthesizing findings from technical design notes and incident reports.
+Explain the likely cause, impacted components, and confidence level.
+Use concise citations such as [D1], [D2], [D3].
+---
+You are combining evidence from quarterly reports and project updates.
+Write a structured response with headline, evidence, and business implication.
+Use placeholder document citations.
+---
+You are synthesizing contract language from multiple versions.
+Summarize differences, notable risks, and the most relevant clause references.
+Use [D1]-style citations.
+---
+You are answering a support question using product guides and troubleshooting notes.
+Provide the most likely resolution path, edge cases, and caveats.
+Support each major claim with placeholder citations.
+---
+You are synthesizing evidence from hiring guidelines and role rubrics.
+Return assumptions, evidence, and a final recommendation with citations.
+---
+You are combining architecture docs, API references, and deployment notes.
+Write a clear technical synthesis with constraints, evidence, and recommended next step.
+Use citations like [D1], [D2].
+---
+You are synthesizing information from legal memos and policy exceptions.
+State the likely interpretation, any ambiguities, and what should be verified next.
+Use placeholder citations.

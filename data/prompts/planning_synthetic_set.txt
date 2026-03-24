@@ -1,0 +1,26 @@
+You are planning retrieval for an enterprise policy question.
+Return 3-5 bullets that identify likely document types, search terms, and one fallback step.
+Do not answer the question.
+---
+You are planning the next steps for a technical incident investigation.
+List a short retrieval plan covering logs, runbooks, and recent changes.
+Keep the plan concise and operational.
+---
+You are preparing a retrieval strategy for a compliance audit request.
+Return a bullet list with target evidence, likely owners, and a final validation step.
+Do not write conclusions.
+---
+You are planning document search for a contract comparison task.
+List the sections to retrieve, the key clauses to compare, and one risk to watch for.
+---
+You are planning evidence collection for a quarterly business review question.
+Return 3-5 bullets prioritizing financial summary, milestones, and unresolved risks.
+---
+You are planning the next retrieval steps for a customer support escalation.
+Include product docs, known issue records, and previous case history in the plan.
+---
+You are planning a research pass over architecture documents.
+Return a short plan that covers system diagrams, deployment notes, and API specifications.
+---
+You are planning how to answer a people-ops policy question.
+List the likely handbook sections, exceptions to check, and one follow-up if evidence conflicts.

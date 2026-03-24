@@ -1,0 +1,140 @@
+Question: Can unused vacation days carry over into the next calendar year?
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Unused vacation days do not automatically carry over into the next calendar year. Employees are expected to schedule and use accrued vacation by December 31.
+[S2] Up to 5 unused vacation days may be carried over only with written manager approval submitted before year end.
+[D2] Benefits FAQ
+[S3] Not automatically. Most employees are expected to use accrued vacation by the end of the calendar year. Limited carryover may be approved through the normal process.
+
+Context:
+[S1] Unused vacation days do not automatically carry over into the next calendar year. Employees are expected to schedule and use accrued vacation by December 31.
+
+[S2] Up to 5 unused vacation days may be carried over only with written manager approval submitted before year end.
+
+[S3] Not automatically. Most employees are expected to use accrued vacation by the end of the calendar year. Limited carryover may be approved through the normal process.
+---
+Question: How many unused PTO days can a manager approve for carryover without HR?
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Up to 5 unused vacation days may be carried over only with written manager approval submitted before year end.
+[D2] HR Policy Exceptions Memo
+[S2] Manager approval alone may authorize carryover of up to 5 unused vacation days when the request is submitted before December 31 and the employee remains in good standing.
+[D3] Benefits FAQ
+[S3] Your manager may approve up to 5 unused days for carryover if the request is submitted before year end.
+
+Context:
+[S1] Up to 5 unused vacation days may be carried over only with written manager approval submitted before year end.
+
+[S2] Manager approval alone may authorize carryover of up to 5 unused vacation days when the request is submitted before December 31 and the employee remains in good standing.
+
+[S3] Your manager may approve up to 5 unused days for carryover if the request is submitted before year end.
+---
+Question: When is HR approval required for PTO carryover?
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Carryover requests above 5 days require Human Resources approval and are limited to exceptional business continuity situations, such as major incidents, staffing shortages during critical launches, or company-directed blackout periods.
+[D2] HR Policy Exceptions Memo
+[S2] Requests above 5 days require both manager approval and HR approval.
+[S3] HR review is appropriate only when the employee could not reasonably take leave because of documented business continuity needs, a formal leave coordination issue, or an organization-wide restriction on time off.
+
+Context:
+[S1] Carryover requests above 5 days require Human Resources approval and are limited to exceptional business continuity situations, such as major incidents, staffing shortages during critical launches, or company-directed blackout periods.
+
+[S2] Requests above 5 days require both manager approval and HR approval.
+
+[S3] HR review is appropriate only when the employee could not reasonably take leave because of documented business continuity needs, a formal leave coordination issue, or an organization-wide restriction on time off.
+---
+Question: What happens if someone submits a carryover request after December 31?
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Carryover requests submitted after December 31 are generally not approved unless a separately documented exception applies.
+[D2] HR Policy Exceptions Memo
+[S2] If a request is submitted after the deadline, the default outcome is denial.
+[S3] HR may review late requests only when the delay was caused by a system outage, emergency leave event, or a documented instruction from company leadership to defer time off.
+[D3] Benefits FAQ
+[S4] Late requests are normally denied, but HR may review them if there was a documented emergency, system outage, or company-directed restriction that prevented timely submission.
+
+Context:
+[S1] Carryover requests submitted after December 31 are generally not approved unless a separately documented exception applies.
+
+[S2] If a request is submitted after the deadline, the default outcome is denial.
+
+[S3] HR may review late requests only when the delay was caused by a system outage, emergency leave event, or a documented instruction from company leadership to defer time off.
+
+[S4] Late requests are normally denied, but HR may review them if there was a documented emergency, system outage, or company-directed restriction that prevented timely submission.
+---
+Question: What documentation has to be included in an approved PTO carryover exception?
+
+Sources:
+[D1] HR Policy Exceptions Memo
+[S1] Approved exceptions must document the reason for the exception, the affected dates, the approving manager, and HR acknowledgment when applicable.
+[D2] Manager Approval Workflow
+[S2] Manager-approved requests should include the number of days approved and a short operational justification.
+[S3] HR-reviewed exceptions should also attach supporting notes describing the business impact, affected calendar window, and any leadership direction that limited time off.
+
+Context:
+[S1] Approved exceptions must document the reason for the exception, the affected dates, the approving manager, and HR acknowledgment when applicable.
+
+[S2] Manager-approved requests should include the number of days approved and a short operational justification.
+
+[S3] HR-reviewed exceptions should also attach supporting notes describing the business impact, affected calendar window, and any leadership direction that limited time off.
+---
+Question: If 7 days need to be carried over because of a launch blackout period, who has to approve it?
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Carryover requests above 5 days require Human Resources approval and are limited to exceptional business continuity situations, such as major incidents, staffing shortages during critical launches, or company-directed blackout periods.
+[D2] HR Policy Exceptions Memo
+[S2] Requests above 5 days require both manager approval and HR approval.
+[D3] Manager Approval Workflow
+[S3] If the request exceeds 5 days, the portal automatically routes the request to HR after manager approval.
+
+Context:
+[S1] Carryover requests above 5 days require Human Resources approval and are limited to exceptional business continuity situations, such as major incidents, staffing shortages during critical launches, or company-directed blackout periods.
+
+[S2] Requests above 5 days require both manager approval and HR approval.
+
+[S3] If the request exceeds 5 days, the portal automatically routes the request to HR after manager approval.
+---
+Question: By when must approved carryover usually be used in the following year?
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Any approved carryover must be used by March 31 of the following year unless Human Resources grants a different deadline in writing.
+[D2] Manager Approval Workflow
+[S2] Employees must use approved carryover by March 31 of the following year unless a separate HR note lists a different expiration date.
+[D3] Benefits FAQ
+[S3] Approved carryover usually must be used by March 31 of the following year.
+
+Context:
+[S1] Any approved carryover must be used by March 31 of the following year unless Human Resources grants a different deadline in writing.
+
+[S2] Employees must use approved carryover by March 31 of the following year unless a separate HR note lists a different expiration date.
+
+[S3] Approved carryover usually must be used by March 31 of the following year.
+---
+Question: Summarize the PTO carryover rule, late-request handling, and exception path in one answer.
+
+Sources:
+[D1] Employee Handbook 2025
+[S1] Unused vacation days do not automatically carry over into the next calendar year. Employees are expected to schedule and use accrued vacation by December 31.
+[S2] Up to 5 unused vacation days may be carried over only with written manager approval submitted before year end.
+[S3] Carryover requests above 5 days require Human Resources approval and are limited to exceptional business continuity situations.
+[D2] HR Policy Exceptions Memo
+[S4] If a request is submitted after the deadline, the default outcome is denial.
+[S5] HR may review late requests only when the delay was caused by a system outage, emergency leave event, or a documented instruction from company leadership to defer time off.
+
+Context:
+[S1] Unused vacation days do not automatically carry over into the next calendar year. Employees are expected to schedule and use accrued vacation by December 31.
+
+[S2] Up to 5 unused vacation days may be carried over only with written manager approval submitted before year end.
+
+[S3] Carryover requests above 5 days require Human Resources approval and are limited to exceptional business continuity situations.
+
+[S4] If a request is submitted after the deadline, the default outcome is denial.
+
+[S5] HR may review late requests only when the delay was caused by a system outage, emergency leave event, or a documented instruction from company leadership to defer time off.
